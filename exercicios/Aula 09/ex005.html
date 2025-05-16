@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+
+    <style>
+        body {
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado!</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+
+        //minha var esta pegando o elemento pela tag do html, porém como tem mais de um <p> paragrafo, você tem que adiciona o [] após e selecioonar por ordem qual parágrafo vc quer selecionar, seria um array, por isso começa por 0.
+
+        var p1 = window.document.getElementsByTagName('p')[0]
+        var p2 = window.document.getElementsByTagName('p')[1]
+        var div = window.document.getElementById('msg')
+
+        p1.style.color = 'black'
+        p1.style.fontWeight = 'bold'
+
+        document.write (p2.innerHTML)
+        window.alert(p2.innerText)
+
+        //A diferença entre innerText e innerHTML é que o text vai pegar o texto apenas e o HTML pega a formatação toda do p1.
+
+        div.style.backgroundColor = 'green'
+        div.style.color = 'black'
+        div.innerText = 'Alterando o texto por meio do JS DOM'
+        
+        //Fizemos tudo isso por meio de variavei, porém como seria utilizando sem variavel, o comando direto, veja abaixo:
+
+        window.document.getElementsByTagName('body')[0].style.backgroundColor = 'lightsalmon'
+            
+        //Aqui em cima eu alterei o fundo do body utilizando o DOM.
+
+        document.querySelector('div#msg').style.fontStyle = 'italic'
+
+        //Acima eu alterei a div com id msg por meio do querySelectior.
+        
+    </script> 
+
+</body>
+</html>

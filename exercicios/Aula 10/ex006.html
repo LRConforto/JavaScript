@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+
+    <style>
+        div#area { 
+            background-color: rgba(0, 128, 0, 0.541);
+            color: white;
+            font-size: 1.3em;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            line-height: 200px;
+       }
+    </style>
+
+</head>
+<body>
+    <div id="area" onclick="clicar()">
+        Interaja...
+    </div>
+
+    <script>
+
+    //Lembrando que estou deixando a variavel para fora apenas para teste, não é o recomendavel a se fazer.
+      var area = document.getElementById('area')  
+
+    //Ao invés de adicionar o evento ao html e para deixar ele menos poluido vc pode adicionar ele diretamente no JS, exemplo abaixo:
+    area.addEventListener('mouseenter', entrar)
+    area.addEventListener('mouseleave', saiu)
+
+      //função clicar
+        function clicar (){
+            area.innerText = 'Clicou!!!'
+            area.style.backgroundColor = 'red'
+        }
+
+      //função entrar  
+        function entrar () {
+            area.innerText = 'Entrou!!!'
+        }
+
+        //função saiu
+        function saiu () { 
+            area.innerText = 'Saiu!!!'
+            area.style.backgroundColor = 'rgba(0, 128, 0, 0.541)'
+      }
+
+    </script>
+</body>
+</html>

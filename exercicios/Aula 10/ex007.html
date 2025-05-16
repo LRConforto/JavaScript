@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+
+    <style>
+        body { 
+            font: bold 20pt Arial;
+        }
+
+        input { 
+            font: bold 18pt Arial;
+            width: 60px;
+        }
+
+        input#somar { 
+            width: 100px;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <h1>Somando Valores!</h1>
+
+    <input type="number" name="n1" id="n1"> +
+    <input type="number" name="n2" id="n2">
+    <input type="button" value="somar" id="somar">
+
+    <p id="res">Resultado:</p>
+
+    <script>
+
+        document.getElementById('somar').addEventListener('click', somando)
+
+        function somando (){ 
+            //Estas variaveis eu estou chamando o elemento
+            var in1 = window.document.getElementById('n1').value;
+            var in2 = window.document.querySelector( 'input#n2').value;
+            var res = window.document.getElementById('res');
+
+
+            //variavei para converter para number, pois ele le como string
+            var n1 = Number(in1);
+            var n2 = Number(in2);
+
+            var soma = n1 + n2;
+
+
+            res.innerHTML = `<span style="color:black">Resultado:</span> A Soma entre <span style="color:black;">${n1}</span> + <span style="color:black;">${n2}</span> é igual a <span style="color:black;">${soma}</span> !`;
+            res.style.color = 'red';
+        }
+    </script>
+
+</body>
+</html>

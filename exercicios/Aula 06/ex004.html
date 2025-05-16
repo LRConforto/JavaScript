@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex004</title>
+
+    <style>
+        body { 
+            background-color: lightgreen;
+            font:bold 2em Arial;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        //var.length vai mostrar quantas letras tem a variavel
+        //var.toUpperCase vai deixar as letras e maiusculas
+        //var.toLowCase vai deixar as letras em minusculas
+
+        var nome = window.prompt('Qual o seu nome ?');
+        document.write (`Ola ${nome}, seu nome tem ${nome.length} letras <br><br>`);
+        document.write(`Seu nome em letras Maiusculas:  ${nome.toUpperCase()}<br><br> `);
+        document.write(`Seu nome em letras minusculas:  ${nome.toLowerCase()}<br><br><br><br>`);
+
+        //Necssário colocar () após chamar o toLowCase e toUpperCase para que ele funcione, pois ta chamando o metodo.
+
+        var valor = 1567.5
+
+        document.write(`o valor Original é: ${valor}<br>`);
+
+        document.write(`o valor com 2 casas após a quebra é ${valor.toFixed(2)}<br>`);
+
+        document.write(`O valor em Reais: ${valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}<br>`);
+
+          document.write(`O valor em Reais: ${valor.toLocaleString('pt-BR' ,  { style: 'currency', currency: 'USD'})}<br>`)
+
+            document.write(`O valor em Reais: ${valor.toLocaleString('pt-BR' ,  { style: 'currency', currency: 'EUR'})}<br>`)
+
+    </script>
+</body>
+</html>
