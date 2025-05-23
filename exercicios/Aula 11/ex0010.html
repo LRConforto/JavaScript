@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição JS / DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h <input type="button" value="Verificar" onclick="verificar()">
+
+    <p id="res"></p>
+
+    <script>
+        function verificar(){ 
+            var txtvel = document.querySelector('#txtvel')
+            var vel = Number(txtvel.value)
+            var res = document.getElementById('res')
+
+             res.innerHTML = `Sua velocidade atual é de <strong>${vel}</strong> Km/h`
+
+            if(vel > 60){ 
+                res.innerHTML = `Você foi <strong>MULTADO!</strong> por ultrapassar a velocidade permitida.`
+                res.innerHTML += `<p style = "color: red;"><strong>Seja mais responsável da próxima vez !<strong></p>`
+            }
+                res.innerHTML += `<p><strong>Dirija sempre com cinto de segurança!</strong></p>`            
+        }
+    </script>
+
+</body>
+</html>
+

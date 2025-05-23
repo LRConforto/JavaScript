@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições / País</title>
+</head>
+<body>
+    <h1>Sistema para verificação de estrangeiro</h1>
+    Digite de qual País você é: <input type="text" name="país" id="país">
+    <input type="button" value="Verificar" onclick="Verificar()">
+
+    <p id="res"></p>
+
+<script> 
+
+    //Condição Composta
+function Verificar(){   
+    var país = window.document.getElementById('país').value
+    var res = window.document.getElementById ('res')
+
+    res.innerHTML = `O seu país de origem é <strong>${país}</strong>!`
+
+    if (país == 'Brasil'){ 
+        res.innerHTML += '<p>Infelizmente, você é Brasileiro!</p>'
+    } else { 
+        res.innerHTML += '<p>Parabéns! você é Estrangeiro!</p>'
+    }
+}
+</script>
+</body>
+</html>
